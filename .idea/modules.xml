@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/core-admin/core-admin.iml" filepath="$PROJECT_DIR$/core-admin/core-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core-common/core-common.iml" filepath="$PROJECT_DIR$/core-common/core-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core-service/core-service.iml" filepath="$PROJECT_DIR$/core-service/core-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/coreframe.iml" filepath="$PROJECT_DIR$/coreframe.iml" />
     </modules>
   </component>

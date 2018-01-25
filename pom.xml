@@ -10,6 +10,8 @@
     <version>${coreframe.version}</version><!-- 1.0-SNAPSHOT -->
     <modules>
         <module>core-admin</module>
+        <module>core-common</module>
+        <module>core-service</module>
     </modules>
 
     <properties>
