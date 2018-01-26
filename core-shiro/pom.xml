@@ -3,35 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>czf.coreframe</groupId>
         <artifactId>coreframe</artifactId>
+        <groupId>czf.coreframe</groupId>
         <version>${coreframe.version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>core-admin</artifactId>
-    <packaging>war</packaging>
-    <description>admin 模块</description>
-    <name>core-admin</name>
 
-
+    <artifactId>core-shiro</artifactId>
     <dependencies>
         <dependency>
             <groupId>czf.coreframe</groupId>
             <artifactId>core-service</artifactId>
             <version>${coreframe.version}</version>
         </dependency>
-        <dependency>
-            <groupId>czf.coreframe</groupId>
-            <artifactId>core-app</artifactId>
-            <version>${coreframe.version}</version>
-        </dependency>
     </dependencies>
-
-
-
-    <properties>
-        <qiniu-version>[7.2.0, 7.2.99]</qiniu-version>
-    </properties>
 
 
 </project>

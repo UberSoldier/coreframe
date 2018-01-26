@@ -7,14 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="core-admin" />
+        <module name="core-app" />
         <module name="core-common" />
         <module name="core-service" />
+        <module name="core-shiro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="core-admin" target="1.8" />
+      <module name="core-app" target="1.8" />
       <module name="core-common" target="1.8" />
       <module name="core-service" target="1.8" />
+      <module name="core-shiro" target="1.8" />
       <module name="corecommon" target="1.8" />
       <module name="coreframe" target="1.8" />
       <module name="coreservice" target="1.8" />

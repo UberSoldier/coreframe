@@ -23,9 +23,9 @@
     <!--RequestMappingHandlerAdapter可以根据@requestmapping标注调用实际的函数，MappingJackson2HttpMessageConverter是json转换器-->
 
     <mvc:annotation-driven>
-        <!--<mvc:argument-resolvers>
-            <bean class="com.czf"/>
-        </mvc:argument-resolvers>-->
+        <mvc:argument-resolvers>
+            <bean class="com.czf.app.resolver.LoginUserHandlerMethodArgumentResolver"/>
+        </mvc:argument-resolvers>
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                 <property name="objectMapper">

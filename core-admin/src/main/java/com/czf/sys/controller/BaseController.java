@@ -22,6 +22,10 @@ public class BaseController {
         return null;
     }
 
+    /**
+     * 获取当前登录用户Id
+     * @return
+     */
     public String getUserId() {
         UserEntity user = getUser();
         if (null != user && null != user.getId()) {

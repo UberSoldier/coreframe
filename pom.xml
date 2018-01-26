@@ -12,6 +12,8 @@
         <module>core-admin</module>
         <module>core-common</module>
         <module>core-service</module>
+        <module>core-app</module>
+        <module>core-shiro</module>
     </modules>
 
     <properties>
