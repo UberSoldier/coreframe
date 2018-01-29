@@ -9,16 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>core-shiro</artifactId>
+    <artifactId>core-redis</artifactId>
     <dependencies>
         <dependency>
             <groupId>czf.coreframe</groupId>
-            <artifactId>core-service</artifactId>
+            <artifactId>core-common</artifactId>
             <version>${coreframe.version}</version>
         </dependency>
         <dependency>
             <groupId>czf.coreframe</groupId>
-            <artifactId>core-redis</artifactId>
+            <artifactId>core-service</artifactId>
             <version>${coreframe.version}</version>
         </dependency>
     </dependencies>

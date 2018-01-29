@@ -41,6 +41,7 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <bean id="exceptionResolver" class="com.czf.base.exception.MyHandlerEceptionResolver"/>
 
     <!--Velocity视图解析器 默认视图-->
     <bean id="velocityViewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
