@@ -4,6 +4,7 @@
     <file type="web" url="file://$PROJECT_DIR$/core-admin" />
     <file type="web" url="file://$PROJECT_DIR$/core-common" />
     <file type="web" url="file://$PROJECT_DIR$/core-service" />
+    <file type="web" url="file://$PROJECT_DIR$/core-shiro" />
     <file type="web" url="file://$PROJECT_DIR$/corecommon" />
     <file type="web" url="file://$PROJECT_DIR$/coreservice" />
   </component>

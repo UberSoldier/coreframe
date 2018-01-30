@@ -25,6 +25,11 @@
             <artifactId>core-app</artifactId>
             <version>${coreframe.version}</version>
         </dependency>
+        <dependency>
+            <groupId>czf.coreframe</groupId>
+            <artifactId>core-shiro</artifactId>
+            <version>${coreframe.version}</version>
+        </dependency>
     </dependencies>
 
 
