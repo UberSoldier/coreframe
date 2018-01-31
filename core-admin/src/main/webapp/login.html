@@ -65,12 +65,12 @@
 							<h1>Dodo - LOGIN</h1>
 						</header>
 						<div class="dodo-login-main">
-							<form action="/" class="layui-form" method="post">
+							<form action="login/login" class="layui-form" method="post">
 								<div class="layui-form-item">
 									<label class="dodo-login-icon">
 										<i class="layui-icon">&#xe612;</i>
 									</label>
-									<input type="text" name="userName" lay-verify="required" autocomplete="off" placeholder="Please input your account." class="layui-input" />
+									<input type="text" name="username" lay-verify="required" autocomplete="off" placeholder="Please input your account." class="layui-input" />
 								</div>
 								<div class="layui-form-item">
 									<label class="dodo-login-icon">
@@ -82,14 +82,14 @@
 									<label class="dodo-login-icon">
 										<i class="layui-icon">&#xe642;</i>
 									</label>
-									<input type="number" name="validCode" lay-verify="required|number" autocomplete="off" placeholder="Please input cal result." class="layui-input" />
+									<input type="text" name="captcha" lay-verify="required" autocomplete="off" placeholder="Please input cal result." class="layui-input" />
 									<span class="form-code" id="changeCode" style="position:absolute;right: 2px; top: 2px;">
-										<img src="static/images/GetVerfiyCode.png" id="refImg" style="cursor: pointer;" title="click refresh" />
+										<img src="login/captcha" id="refImg" style="cursor: pointer;width: 108px;height:34px" title="click refresh" />
 									</span>
 								</div>
 								<div class="layui-form-item">
 									<div class="dodo-pull-left dodo-login-remember">
-										<input type="checkbox" name="rememberMe" value="true" lay-skin="primary" checked title="Remember account?" />
+										<input type="checkbox" name="isRememberMe" value="true" lay-skin="primary" checked title="Remember account?" />
 									</div>
 									<div class="dodo-pull-right">
 										<button class="layui-btn layui-btn-primary" lay-submit lay-filter="login">
@@ -118,7 +118,7 @@
 					$ = layui.jquery,
 					form = layui.form;
 				$('#changeCode').on('click', function() {
-					$('#changeCode > img')[0].src = 'static/images/GetVerfiyCode.png';
+					$('#changeCode > img')[0].src = 'login/captcha';
 				});
 
 				var index = layer.load(2, {
@@ -131,20 +131,20 @@
 						var loadIndex = layer.load(2, {
 							shade: [0.3, '#333']
 						});
-						location.href = "/core-admin/index.html";
-						// $.post(data.form.action, data.field, function(res){
-						// 	if (!res.rel) {
-						// 		layer.msg(res.msg, {
-						// 			icon: 2
-						// 		});
-						// 		loadIndex && layer.close(loadIndex);
-						// 		$('#changeCode').click();
-						// 	} else {
-						// 		setTimeout(function() {
-						// 			location.href = '/';
-						// 		}, 1500);
-						// 	}
-						// }, 'json');
+						//location.href = "index1.html";
+						$.post(data.form.action, data.field, function(res){
+                            if (res.code == 0) {
+                                setTimeout(function() {
+                                    location.href = 'index1.html';
+                                }, 1500);
+                            } else {
+                                layer.msg(res.msg, {
+                                    icon: 2
+                                });
+                                loadIndex && layer.close(loadIndex);
+                                $('#changeCode').click();
+                            }
+                        }, 'json');
 						return false;
 					});
 				}());

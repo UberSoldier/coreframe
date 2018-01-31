@@ -42,4 +42,26 @@ public class Constant {
             return value;
         }
     }
+
+    public enum YESNO {
+        /**
+         * 是
+         */
+        YES("0"),
+        /**
+         * 否
+         */
+        NO("1");
+
+        private String value;
+
+        private YESNO(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+    }
+
 }

@@ -13,6 +13,10 @@
     <!--静态资源的访问-->
     <mvc:default-servlet-handler />
 
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+    <context:component-scan base-package="com.czf" />
+
     <!--自动扫描Controller-->
     <!--<context:component-scan base-package="com.**.controller" />-->
 
