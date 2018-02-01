@@ -1,6 +1,8 @@
 package com.czf.sys.controller;
 
 import com.czf.base.utils.Result;
+import com.czf.sys.entity.UserEntity;
+import com.czf.sys.service.UserService;
 import com.czf.utils.ShiroUtils;
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
@@ -43,21 +45,21 @@ public class LoginController extends BaseController {
         ServletOutputStream out = response.getOutputStream();
         ImageIO.write(image, "jpg", out);
     }
-
+    @Autowired
+    private UserService userService;
     /**
      * 登录
      */
     @ResponseBody
     @RequestMapping(value = "/login/login", method = RequestMethod.POST)
     public Result login(String username, String password, String captcha, boolean isRememberMe) throws IOException {
-        String kaptcha = ShiroUtils.getKaptcha(Constants.KAPTCHA_SESSION_KEY);
-        System.out.println(kaptcha);
-        System.out.println(captcha);
+        /*String kaptcha = ShiroUtils.getKaptcha(Constants.KAPTCHA_SESSION_KEY);
         if (!captcha.equalsIgnoreCase(kaptcha)) {
             return Result.error("验证码不正确");
-        }
+        }*/
         try {
             Subject subject = ShiroUtils.getSubject();
+            //UserEntity user = userService.queryByLoginName("admin");
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
             token.setRememberMe(isRememberMe);
             subject.login(token);

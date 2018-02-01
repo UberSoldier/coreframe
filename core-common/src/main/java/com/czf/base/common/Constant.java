@@ -64,4 +64,51 @@ public class Constant {
         }
     }
 
+    public enum ABLE_STATUS {
+        /**
+         * 正常
+         */
+        YES("0"),
+        /**
+         * 禁用
+         */
+        NO("-1");
+        private String value;
+
+        ABLE_STATUS(String value){
+            this.value=value;
+        }
+        public String getValue(){
+            return value;
+        }
+    }
+
+    /**
+     * 机构类型
+     */
+    public enum OrganType {
+        /**
+         * 根节点
+         */
+        CATALOG("0"),
+        /**
+         * 机构
+         */
+        ORGAN("1"),
+        /**
+         * 部门
+         */
+        DEPART("2");
+
+        private String value;
+
+        private OrganType(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+    }
+
 }

@@ -82,7 +82,7 @@
         <property name="patterns">
             <list>
                 <value>com.czf.*.controller.*</value>
-                <value>com.czf.*.service.*</value>
+                <value>com.czf.*.service.impl.*</value>
             </list>
         </property>
     </bean>

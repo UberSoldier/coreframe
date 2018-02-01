@@ -2,13 +2,15 @@ package com.czf.sys.service.impl;
 
 import com.czf.base.utils.Utils;
 import com.czf.sys.dao.RoleDao;
+import com.czf.sys.dao.RoleMenuDao;
 import com.czf.sys.entity.RoleEntity;
 import com.czf.sys.entity.UserEntity;
 import com.czf.sys.service.RoleService;
 import com.czf.utils.UserUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +20,11 @@ import java.util.Map;
 @Transactional
 public class RoleServiceImpl implements RoleService {
 
+    @Autowired
     private RoleDao roleDao;
+
+    @Autowired
+    private RoleMenuDao roleMenuDao;
 
     @Override
     public RoleEntity queryObject(String id) {
@@ -53,7 +59,13 @@ public class RoleServiceImpl implements RoleService {
             Map map = new HashMap();
             map.put("roleId", role.getId());
             map.put("menuIdList", role.getMenuIdList());
-
+            roleMenuDao.save(map);
+        }
+        if (role.getOrganIdList() != null && role.getOrganIdList().size()>0) {
+            Map organ = new HashMap();
+            organ.put("role_id", role.getId());
+            organ.put("organIdList", role.getOrganIdList());
+            roleDao.batchSaveRoleOrgan(organ);
         }
     }
 
@@ -74,6 +86,6 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public List<RoleEntity> queryByUserId(String userId, String status) {
-        return null;
+        return roleDao.queryByUserId(userId, status);
     }
 }

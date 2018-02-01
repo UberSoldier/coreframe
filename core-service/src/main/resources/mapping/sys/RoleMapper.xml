@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.czf.sys.dao.RoleDao">
+
+    <resultMap id="roleMap" type="com.czf.sys.entity.RoleEntity">
+        <result property="id" column="id"/>
+        <result property="bapid" column="bapid"/>
+        <result property="baid" column="baid"/>
+        <result property="name" column="name"/>
+        <result property="code" column="code"/>
+        <result property="status" column="status"/>
+        <result property="roleType" column="role_type"/>
+        <result property="remark" column="remark"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateId" column="update_id"/>
+        <result property="createId" column="create_id"/>
+    </resultMap>
+
+    <select id="queryByUserId" resultType="com.czf.sys.entity.RoleEntity" resultMap="roleMap">
+        SELECT r.id, r.name, r.code, r.status FROM sys_user_role ur
+        LEFT JOIN sys_role r ON ur.role_id=r.id
+        WHERE ur.user_id = #{0} AND r.status = #{1}
+    </select>
+
+
+    <insert id="save" parameterType="com.czf.sys.entity.RoleEntity">
+        INSERT INTO sys_role
+        (
+            `id`,
+            `bapid`,
+            `baid`,
+            `name`,
+            `code`,
+            `status`,
+            `role_type`,
+            `remark`,
+            `update_time`,
+            `create_time`,
+            `update_id`,
+            `create_id`
+        )
+        VALUES
+        (
+            #{id},
+            #{bapid},
+            #{baid},
+            #{name},
+            #{code},
+            #{status},
+            #{roleType},
+            #{updateTime},
+            #{createType},
+            #{updateId},
+            #{createId}
+        )
+    </insert>
+
+    <!--批量保存组织机构与角色关系表-->
+    <insert id="batchSaveRoleOrgan" parameterType="java.util.Map">
+        INSERT INTO sys_organ_role (`role_id`, `organ_id`)
+        VALUES
+        <foreach collection="organIdList" item="item" index="index" separator=",">
+            (
+            #{role_id},
+            #{item}
+            )
+        </foreach>
+    </insert>
+
+</mapper>
