@@ -1,7 +1,6 @@
 package com.czf.sys.controller;
 
 import com.czf.base.utils.Result;
-import com.czf.sys.entity.UserEntity;
 import com.czf.sys.service.UserService;
 import com.czf.utils.ShiroUtils;
 import com.google.code.kaptcha.Constants;
@@ -9,10 +8,10 @@ import com.google.code.kaptcha.Producer;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
@@ -24,7 +23,7 @@ import java.io.IOException;
 /**
  * 登陆控制
  */
-@Controller
+@RestController
 public class LoginController extends BaseController {
 
     @Autowired

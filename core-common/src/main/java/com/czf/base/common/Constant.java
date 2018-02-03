@@ -15,7 +15,9 @@ public class Constant {
      */
     public static final String DEF_PASSWORD="a";
 
-
+    /**
+     * 返回状态值
+     */
     public enum RESULT {
         /**
          * 成功
@@ -43,6 +45,35 @@ public class Constant {
         }
     }
 
+    /**
+     * 菜单类型
+     */
+    public enum MenuType{
+        /**
+         * 菜单
+         */
+        MENU("1"),
+        /**
+         * 按钮
+         */
+        BUTTON("2"),
+        /**
+         * 目录
+         */
+        CATALOG("0");
+        private String value;
+
+        private MenuType(String value){
+            this.value=value;
+        }
+        public String getValue(){
+            return value;
+        }
+    }
+
+    /**
+     * 是否类型
+     */
     public enum YESNO {
         /**
          * 是

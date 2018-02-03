@@ -19,4 +19,11 @@ public interface MenuService {
      * @return
      */
     List<MenuEntity> queryByUserId(String userId);
+
+    /**
+     * 获取用户菜单列表 主页查询用户菜单用
+     * @param userId
+     * @return
+     */
+    List<MenuEntity> queryListUser(String userId);
 }

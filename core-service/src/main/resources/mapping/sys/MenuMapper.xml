@@ -59,4 +59,13 @@
         FROM sys_menu m ORDER BY sort
     </select>
 
+    <!--根据父菜单Id查询菜单-->
+    <select id="queryListParentId" resultType="com.czf.sys.entity.MenuEntity" resultMap="menuMap">
+        select
+        <include refid="Base_Column_List" />,
+        (SELECT tm.name FROM sys_menu tm WHERE tm.id=m.parent_id ) AS parentName
+        from sys_menu m
+        where parent_id = #{parentId} ORDER BY sort
+    </select>
+
 </mapper>
