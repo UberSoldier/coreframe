@@ -75,7 +75,6 @@ public class MyRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String userLoginName = (String) token.getPrincipal();
-        System.out.println(userLoginName);
         UserEntity user = userService.queryByLoginName(userLoginName);
         if (user == null) {
             throw new AuthenticationException("账号密码错误");

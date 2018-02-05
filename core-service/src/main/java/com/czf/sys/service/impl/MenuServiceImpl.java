@@ -59,7 +59,7 @@ public class MenuServiceImpl implements MenuService {
         List<MenuEntity> reMenus = new ArrayList<>();
         for (MenuEntity menu:menuEntities) {
             //如果下级资源在用户授权资源中,则添加
-            if (menuIds.contains(menu.getIcon())) {
+            if (menuIds.contains(menu.getId())) {
                 reMenus.add(menu);
             }
         }

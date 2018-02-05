@@ -1,11 +1,13 @@
 package com.czf.sys.entity;
 
+import com.czf.base.entity.BaseEntity;
+
 import java.util.List;
 
 /**
  * 菜单表
  */
-public class MenuEntity {
+public class MenuEntity extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
