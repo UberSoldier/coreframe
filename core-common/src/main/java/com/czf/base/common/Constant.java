@@ -142,4 +142,28 @@ public class Constant {
         }
     }
 
+    /**
+     * 代码生成方式
+     */
+    public enum genType {
+        /**
+         * 本地项目
+         */
+        local(0),
+        /**
+         * web下载
+         */
+        webDown(1);
+
+        private int value;
+
+        private genType(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
 }

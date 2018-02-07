@@ -15,6 +15,7 @@
         <module>core-app</module>
         <module>core-shiro</module>
         <module>core-redis</module>
+        <module>core-generator</module>
     </modules>
 
     <properties>

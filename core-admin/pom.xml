@@ -35,6 +35,21 @@
             <artifactId>core-shiro</artifactId>
             <version>${coreframe.version}</version>
         </dependency>
+        <dependency>
+            <groupId>czf.coreframe</groupId>
+            <artifactId>core-generator</artifactId>
+            <version>${coreframe.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>hxy.hxyFrame</groupId>
+            <artifactId>frame-common</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>hxy.hxyFrame</groupId>
+            <artifactId>frame-common</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
 
