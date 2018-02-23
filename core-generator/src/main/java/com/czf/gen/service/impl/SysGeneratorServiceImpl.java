@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.zip.ZipOutputStream;
 
-@Service("sysGeneratorService")
+@Service
 public class SysGeneratorServiceImpl implements SysGeneratorService {
 
     @Autowired
@@ -56,8 +56,5 @@ public class SysGeneratorServiceImpl implements SysGeneratorService {
         IOUtils.closeQuietly(zip);
         return outputStream.toByteArray();
     }
-
-
-
 
 }

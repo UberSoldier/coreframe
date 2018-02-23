@@ -7,6 +7,7 @@ import com.czf.base.utils.Query;
 import com.czf.base.utils.Result;
 import com.czf.base.xss.XssHttpServletRequestWrapper;
 import com.czf.gen.service.SysGeneratorService;
+import org.apache.commons.io.IOUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -59,6 +60,13 @@ public class SysGeneratorController {
         tableNames = JSON.parseArray(tables).toArray(tableNames);
 
         byte[] data = sysGeneratorService.generatorCode(tableNames, Constant.genType.webDown.getValue());
+
+        response.reset();
+        response.setHeader("Content-Disposition", "attachment; filename=\"coreframe.zip\"");
+        response.addHeader("Content-Length", "" + data.length);
+        response.setContentType("application/octet-stream; charset=UTF-8");
+
+        IOUtils.write(data, response.getOutputStream());
     }
 
 }

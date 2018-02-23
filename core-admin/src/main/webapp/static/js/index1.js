@@ -3,7 +3,7 @@ layui.config({
 }).use(['navtab'],function(){
 	window.jQuery = window.$ = layui.jquery;
 	window.layer = layui.layer;
-    var element = layui.element,
+    var element = layui.element(),
 	navtab = layui.navtab({
 		elem: '.larry-tab-box'
 	});
@@ -93,7 +93,7 @@ layui.use(['jquery','layer','element'],function(){
  * 加载菜单树
  */
 function initMenu() {
-    var element = layui.element;
+    var element = layui.element();
     var clickMenus = ("demo/leave/list");
     $.getJSON("sys/menu/userMenu?_"+$.now(), function(r){
         var menuList = r.menuList;
