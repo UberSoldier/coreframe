@@ -18,8 +18,7 @@ public class BaseController {
      * @return
      */
     public UserEntity getUser() {
-        //return UserUtils.getCurrentUser();
-        return null;
+        return UserUtils.getCurrentUser();
     }
 
     /**

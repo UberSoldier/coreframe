@@ -21,4 +21,10 @@ public interface MenuDao extends BaseDao<MenuEntity> {
      * @return
      */
     List<MenuEntity> queryListParentId(String parentId);
+
+    /**
+     * 查询所有不包括按钮 的菜单
+     * @return
+     */
+    List<MenuEntity> queryNotButtonnList(String[] types);
 }
